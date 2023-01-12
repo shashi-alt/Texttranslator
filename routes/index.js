@@ -4,14 +4,14 @@ var translate = require('@vitalets/google-translate-api');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: "TEXT LANGUAGE TRANSLATOR", translated: "" });
+  res.render('index', { title: "TEXT LANGUAGE TRANSLATOR ONE TO ANOTHER", translated: "" });
 });
 
 router.post('/index', function (req, res, next) {
 
   translate(req.body.text, { to: req.body.language}).then(response => {
 
-    res.render('index', { title: "TEXT LANGUAGE TRANSLATOR", translated: response.text })
+    res.render('index', { title: "TEXT LANGUAGE TRANSLATOR ONE TO ANOTHER", translated: response.text })
   }).catch(err => {
     console.error(err);
   });
